@@ -1,0 +1,88 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Supplier_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-supplier_id" data-rule="required" data-source="supplier/index" class="form-control selectpage" name="row[supplier_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Operate_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-operate_id" data-rule="required" data-source="operate/index" class="form-control selectpage" name="row[operate_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Storage_no')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-storage_no" class="form-control" name="row[storage_no]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Store_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-store_id" data-rule="required" data-source="store/index" class="form-control selectpage" name="row[store_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Rent_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-rent_num" class="form-control" name="row[rent_num]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sale_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sale_num" class="form-control" name="row[sale_num]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Do_user_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-do_user_id" data-rule="required" data-source="do/user/index" class="form-control selectpage" name="row[do_user_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Confirm_user_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-confirm_user_id" data-rule="required" data-source="confirm/user/index" class="form-control selectpage" name="row[confirm_user_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Confirmtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-confirmtime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[confirmtime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Confirm_status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-confirm_status" class="form-control" name="row[confirm_status]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" class="form-control" name="row[status]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remark" class="form-control " rows="5" name="row[remark]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dress_ids')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-dress_ids" class="form-control " rows="5" name="row[dress_ids]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

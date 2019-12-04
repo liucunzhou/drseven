@@ -1,0 +1,100 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" class="form-control" name="row[title]" type="text" value="{$row.title|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ftitle')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ftitle" class="form-control" name="row[ftitle]" type="text" value="{$row.ftitle|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Store_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-store_id" data-rule="required" data-source="store/index" class="form-control selectpage" name="row[store_id]" type="text" value="{$row.store_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Code_ids')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-code_ids" data-rule="required" data-source="code/index" data-multiple="true" class="form-control selectpage" name="row[code_ids]" type="text" value="{$row.code_ids|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Categroy_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-categroy_id" data-rule="required" data-source="categroy/index" class="form-control selectpage" name="row[categroy_id]" type="text" value="{$row.categroy_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Cost_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cost_price" class="form-control" step="0.01" name="row[cost_price]" type="number" value="{$row.cost_price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Deposit')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-deposit" class="form-control" step="0.01" name="row[deposit]" type="number" value="{$row.deposit|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-price" class="form-control" name="row[price]" type="text" value="{$row.price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Rent_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-rent_price" class="form-control" name="row[rent_price]" type="text" value="{$row.rent_price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sale_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sale_price" class="form-control" name="row[sale_price]" type="text" value="{$row.sale_price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Qrcode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-qrcode" class="form-control" name="row[qrcode]" type="text" value="{$row.qrcode|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_vip_free')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-is_vip_free" class="form-control" name="row[is_vip_free]" type="text" value="{$row.is_vip_free|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_inner')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-is_inner" class="form-control" name="row[is_inner]" type="text" value="{$row.is_inner|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" class="form-control" name="row[status]" type="number" value="{$row.status|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Operate_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-operate_id" data-rule="required" data-source="operate/index" class="form-control selectpage" name="row[operate_id]" type="text" value="{$row.operate_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,88 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Scrap_no')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-scrap_no" class="form-control" name="row[scrap_no]" type="text" value="{$row.scrap_no|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Operate_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-operate_id" data-rule="required" data-source="operate/index" class="form-control selectpage" name="row[operate_id]" type="text" value="{$row.operate_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Store_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-store_id" data-rule="required" data-source="store/index" class="form-control selectpage" name="row[store_id]" type="text" value="{$row.store_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Rent_scrap_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-rent_scrap_num" class="form-control" name="row[rent_scrap_num]" type="number" value="{$row.rent_scrap_num|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sale_scrap_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sale_scrap_num" class="form-control" name="row[sale_scrap_num]" type="number" value="{$row.sale_scrap_num|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Deal_user_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-deal_user_id" data-rule="required" data-source="deal/user/index" class="form-control selectpage" name="row[deal_user_id]" type="text" value="{$row.deal_user_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Confirm_user_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-confirm_user_id" data-rule="required" data-source="confirm/user/index" class="form-control selectpage" name="row[confirm_user_id]" type="text" value="{$row.confirm_user_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Udpatetime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-udpatetime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[udpatetime]" type="text" value="{:$row.udpatetime?datetime($row.udpatetime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Confirmtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-confirmtime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[confirmtime]" type="text" value="{:$row.confirmtime?datetime($row.confirmtime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Confirm_status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-confirm_status" class="form-control" name="row[confirm_status]" type="number" value="{$row.confirm_status|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" class="form-control" name="row[status]" type="number" value="{$row.status|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Weigh')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weigh" class="form-control" name="row[weigh]" type="number" value="{$row.weigh|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remark" class="form-control " rows="5" name="row[remark]" cols="50">{$row.remark|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
