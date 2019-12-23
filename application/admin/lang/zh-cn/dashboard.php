@@ -45,4 +45,10 @@ return [
     'Language'                => '语言',
     'View more'               => '查看更多',
     'Security tips'           => '<i class="fa fa-warning"></i> 安全提示：你正在使用默认的后台登录入口，为了你的网站安全，建议你修改后台登录入口，<a href="https://forum.fastadmin.net/thread/7640" target="_blank">点击查看修改方法</a>',
+    'StoreManager'            => '店长',
+    'Dresser'                 => '礼服师',
+    'Inviter'                 => '邀约',
+    'Spreader'                => '推广',
+    'Supplier'                => '供应商',
+    'Boss'                    => '老板'
 ];

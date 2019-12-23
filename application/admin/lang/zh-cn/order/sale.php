@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'Order_no'         => '订单编号',
+    'Order_type'       => '订单类型',
+    'Salesman'         => '接单人',
+    'Confirmman'       => '确认人',
+    'Status'           => '订单状态',
+    'Customer_id'      => '客户信息',
+    'Mobile'           => '客户电话',
+    'Source_id'        => '客户来源',
+    'Zone'             => '客户地区',
+    'Dress_id'         => '礼服',
+    'Dress_package_id' => '礼服套餐',
+    'Dress_set_id'     => '礼服组合',
+    'Is_express'       => '快递取件',
+    'Is_wash'          => '需要洗衣',
+    'Create_time'      => '创建时间',
+    'Update_time'      => '更新时间',
+    'Confirm_time'     => '确认时间',
+    'Delete_time'      => '删除时间',
+    'unconfirm'        => '待确认',
+    'unseleted'        => '待选',
+    'fetch'            => '取件',
+    'return'           => '还件',
+    'deposit'          => '退押金',
+    'finished'         => '已完成',
+    'back'             => '已退单',
+    'drop'             => '已作废'
+];

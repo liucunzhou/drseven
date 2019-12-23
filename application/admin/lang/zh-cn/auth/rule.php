@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'ID'                                                        => '编号', 
     'Toggle all'                                                => '显示全部',
     'Condition'                                                 => '规则条件',
     'Remark'                                                    => '备注',

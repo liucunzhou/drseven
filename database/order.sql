@@ -1,0 +1,21 @@
+create table fa_order(
+    id int not null auto_increment primary key,
+    order_no varchar(64) not null default '' comment '订单编号',
+    order_type int not null default 0 comment '订单类型',
+    salesman int not null default 0 comment '接单人',
+    confirmman int not null default 0 comment '确认人',
+    status int not null default 0 comment '订单状态',
+    customer_id int not null default 0 comment '客户信息',
+    mobile char(15) not null default '' comment '客户电话',
+    source_id int not null default 0 comment '客户来源',
+    zone varchar(100) not null default '' comment '客户地区',
+    dress_id int not null default 0 comment '礼服',
+    dress_package_id int not null default 0 comment '礼服套餐',
+    dress_set_id int not null default 0 comment '礼服组合',
+    is_express int not null default 0 comment '快递取件',
+    is_wash int not null default 0 comment '需要洗衣',
+    create_time int not null default 0,
+    update_time int not null default 0,
+    confirm_time int not null default 0,
+    delete_time int not null default 0
+);
