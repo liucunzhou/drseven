@@ -4,7 +4,7 @@ namespace app\admin\validate;
 
 use think\Validate;
 
-class Litestorecategory extends Validate
+class DressCategory extends Validate
 {
     /**
      * 验证规则

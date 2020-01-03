@@ -1,13 +1,13 @@
 <?php
 
-namespace app\admin\model;
+namespace app\admin\model\dress;
 
 use think\Model;
 
-class Litestorecategory extends Model
+class DressCategory extends Model
 {
     // 表名
-    protected $name = 'litestore_category';
+    protected $name = 'dress_category';
     
     // 自动写入时间戳字段
     protected $autoWriteTimestamp = 'int';

@@ -60,6 +60,15 @@ class User extends Backend
         return $this->view->fetch();
     }
 
+    /*
+    * 编辑
+    */
+    public function add()
+    {
+        $this->view->assign('groupList', build_select('row[group_id]', \app\admin\model\UserGroup::column('id,name'), [], ['class' => 'form-control selectpicker']));
+        return parent::add();
+    }
+
     /**
      * 编辑
      */

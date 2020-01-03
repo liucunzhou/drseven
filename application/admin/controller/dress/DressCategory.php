@@ -1,20 +1,21 @@
 <?php
 
-namespace app\admin\controller;
+namespace app\admin\controller\dress;
 
 use app\common\controller\Backend;
 use fast\Tree;
+
 /**
  * 商品分类
  *
  * @icon fa fa-circle-o
  */
-class Litestorecategory extends Backend
+class DressCategory extends Backend
 {
     
     /**
-     * Litestorecategory模型对象
-     * @var \app\admin\model\Litestorecategory
+     * DressCategory模型对象
+     * @var \app\admin\model\DressCategory
      */
     protected $model = null;
     protected $categorylist = [];
@@ -22,7 +23,7 @@ class Litestorecategory extends Backend
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = new \app\admin\model\Litestorecategory;
+        $this->model = new \app\admin\model\dress\DressCategory();
 
         $tree = Tree::instance();
         $tree->init(collection($this->model->order('weigh desc,id desc')->select())->toArray(), 'pid');
