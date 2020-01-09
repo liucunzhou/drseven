@@ -210,6 +210,7 @@ class Dress extends Backend
     public function edit($ids = NULL)
     {
         $row = $this->model->get($ids, ['specRel', 'spec', 'spec_rel.spec']);
+        // print_r($row);
         if (!$row)
             $this->error(__('No Results were found'));
         $adminIds = $this->getDataLimitAdminIds();
@@ -252,6 +253,24 @@ class Dress extends Backend
         }
         $row['specData'] = $specData;
         $this->view->assign("row", $row);
+        return $this->view->fetch();
+    }
+
+    /**
+     * 商品列表
+     */
+    public function goods($ids=null)
+    {
+
+        $row = $this->model->get($ids, ['specRel', 'spec', 'spec_rel.spec']);
+        // 多规格信息
+        $specData = 'null';
+        if ($row['spec_type'] === '20'){
+            $specData = json_encode($this->model->getManySpecData($row['spec_rel'], $row['spec']));
+        }
+        $row['specData'] = $specData;
+        $this->view->assign("row", $row);
+
         return $this->view->fetch();
     }
 }

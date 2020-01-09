@@ -2,7 +2,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form', 'template', 'dress'],
 
     var Controller = {
         index: function () {
-            $(".btn-add").data("area", ["1000px", "800px"]);
+            $(".btn-add").data("area", ["100%", "100%"]);
+            $(".btn-rent").data("area", ["100%", "100%"]);
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
@@ -77,7 +78,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form', 'template', 'dress'],
                                 {
                                     name: 'goods',
                                     title: __('产品'),
-                                    classname: 'btn btn-xs btn-primary btn-dialog',
+                                    classname: 'btn btn-xs btn-primary btn-addtabs',
                                     icon: 'fa fa-list',
                                     text: '产品',
                                     url: 'dress/dress/goods'
@@ -93,9 +94,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form', 'template', 'dress'],
             table.on('load-success.bs.table', function (data) {
                 $(".btn-editone").data("area", ["1000px", "800px"]);
             });
-
-        },
-        goods: function () {
 
         },
         add: function () {
@@ -190,14 +188,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form', 'template', 'dress'],
             //Controller.api.bindevent();
 
             Form.api.bindevent($("form[role=form]"), function (data, ret) {
-                //Fast.api.close(data);
                 Toastr.success("商品提交成功");
             }, function (data, ret) {
                 Toastr.success("商品提交失败");
             }, function (success, error) {
                 //注意如果我们需要阻止表单，可以在此使用return false;即可
                 //如果我们处理完成需要再次提交表单则可以使用submit提交,如下
-                console.log(this);
                 var form = this;
                 if (form.size() === 0) {
                     Toastr.error("表单未初始化完成,无法提交");
@@ -221,7 +217,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form', 'template', 'dress'],
                     });
                 }
                 var dataParam = {spec_many: specMany.getData()};
-                console.log(dataParam);
                 Fast.api.ajax({
                     type: type,
                     url: url,
@@ -256,6 +251,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form', 'template', 'dress'],
                 });
                 return false;
             });
+
             // 注册商品多规格组件
             var specMany = new GoodsSpec({
                 container: '.goods-spec-many',

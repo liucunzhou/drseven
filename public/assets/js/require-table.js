@@ -71,6 +71,8 @@ define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table
             restoreallbtn: '.btn-restoreall',
             destroyallbtn: '.btn-destroyall',
             dragsortfield: 'weigh',
+            addrent:'.btn-rent',
+            addsale:'.btn-sale',
         },
         api: {
             init: function (defaults, columnDefaults, locales) {
@@ -78,7 +80,7 @@ define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table
                 columnDefaults = columnDefaults ? columnDefaults : {};
                 locales = locales ? locales : {};
                 // 如果是iOS设备则启用卡片视图
-                if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                if (navigator.userAgent.match(/(iPod|iPhone|     )/)) {
                     Table.defaults.cardView = true;
                 }
                 // 写入bootstrap-table默认配置
@@ -107,6 +109,7 @@ define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table
                     $.fn.bootstrapTable.defaults.exportTypes = defaults.exportTypes;
                 }
             },
+
             // 绑定事件
             bindevent: function (table) {
                 //Bootstrap-table的父元素,包含table,toolbar,pagnation
@@ -212,6 +215,35 @@ define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table
                         row = $.extend({}, row ? row : {}, {ids: row[options.pk]});
                         var url = Table.api.replaceurl(url, row, table);
                         Fast.api.open(url, __('Edit'), $(that).data() || {});
+                    });
+                });
+                // 批量租赁按钮事件
+                $(toolbar).on('click', Table.config.addrent, function () {
+                    var that = this;
+                    //循环弹出多个编辑框
+                    var ids = '';
+                    $.each(table.bootstrapTable('getSelections'), function (index, row) {
+                        if(index == 0) {
+                            ids = row[options.pk];
+                        } else {
+                            ids = ids + ',' + row[options.pk];
+                        }
+                    });
+                    var url = options.extend.rent_url;
+                    var row = $.extend({}, {}, {ids: ids});
+                    var url = Table.api.replaceurl(url, row, table);
+                    console.log(url);
+                    Fast.api.open(url, __('Edit'), $(that).data() || {});
+                });
+                // 批量购买按钮事件
+                $(toolbar).on('click', Table.config.addsale, function () {
+                    var that = this;
+                    //循环弹出多个编辑框
+                    $.each(table.bootstrapTable('getSelections'), function (index, row) {
+                        var url = options.extend.sale_url;
+                        row = $.extend({}, row ? row : {}, {ids: row[options.pk]});
+                        var url = Table.api.replaceurl(url, row, table);
+                        Fast.api.open(url, __('Sale'), $(that).data() || {});
                     });
                 });
                 //清空回收站

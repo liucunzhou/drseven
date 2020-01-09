@@ -27,5 +27,6 @@ return [
     'Createtime'  =>  '创建时间',
     'Updatetime'  =>  '更新时间',
     'Category.name'  =>  '分类名称',
-    'Freight.name'  =>  '运费模版名称'
+    'Freight.name'  =>  '运费模版名称',
+    'TryDate' => '预约试衣时间'
 ];
